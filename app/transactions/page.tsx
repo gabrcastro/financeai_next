@@ -1,5 +1,3 @@
-export default function Transactions() {
-    return(
-        <main></main>
-    );
+export default function TransactionsPage() {
+  return <main></main>;
 }

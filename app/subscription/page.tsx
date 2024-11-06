@@ -1,5 +1,3 @@
-export default function Subsciption() {
-    return(
-        <main></main>
-    );
+export default function SubsciptionPage() {
+  return <main></main>;
 }
