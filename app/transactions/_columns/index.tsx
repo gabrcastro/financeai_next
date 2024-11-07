@@ -5,28 +5,10 @@ import { ColumnDef } from "@tanstack/react-table";
 import { TransactionTypeBadge } from "../_components/typeBadge";
 import { Button } from "@/app/_components/ui/button";
 import { PencilIcon, TrashIcon } from "lucide-react";
-
-export const TRANSACTION_CATEGORY_LABELS = {
-  HOUSING: "Housing",
-  TRANSPORTATION: "Transportation",
-  FOOD: "Food",
-  ENTERTAINMENT: "Entertainment",
-  HEALTH: "Health",
-  UTILITY: "Utility",
-  SALARY: "Salary",
-  EDUCATION: "Education",
-  OTHER: "Other",
-};
-
-export const TRANSACTION_PAYMENTH_METHODS_LABELS = {
-  CREDIT_CARD: "Credit Card",
-  DEBIT_CARD: "Debit Card",
-  BANK_TRANSFER: "Bank Transfer",
-  BANK_SLIP: "Bank Slip",
-  CASH: "Cash",
-  PIX: "Pix",
-  OTHER: "Other",
-};
+import {
+  TRANSACTION_CATEGORY_LABELS,
+  TRANSACTION_PAYMENT_METHOD_LABELS,
+} from "@/app/_constants/transactions";
 
 export const transactionColumns: ColumnDef<Transaction>[] = [
   {
@@ -50,14 +32,14 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     accessorKey: "paymentMethod",
     header: "Payment Method",
     cell: ({ row: { original: transaction } }) =>
-      TRANSACTION_PAYMENTH_METHODS_LABELS[transaction.paymentMethod],
+      TRANSACTION_PAYMENT_METHOD_LABELS[transaction.paymentMethod],
   },
   {
     accessorKey: "date",
     header: "Date",
     cell: ({ row: { original: transaction } }) => (
       <p className="text-muted-foreground">
-        {new Date(transaction.date).toLocaleDateString("pt-BR", {
+        {new Date(transaction.date).toLocaleDateString("en-US", {
           day: "2-digit",
           month: "long",
           year: "numeric",
@@ -69,7 +51,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     accessorKey: "amount",
     header: "Amount",
     cell: ({ row: { original: transaction } }) =>
-      new Intl.NumberFormat("pt-BR", {
+      new Intl.NumberFormat("en-US", {
         style: "currency",
         currency: "BRL",
       }).format(Number(transaction.amount)),
