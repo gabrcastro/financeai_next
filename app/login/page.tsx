@@ -20,7 +20,7 @@ export default async function LoginPage() {
           className="mb-8"
         />
         <h1 className="mb-3 text-4xl font-bold">Welcome</h1>
-        <p className="text-muted-foreground mb-8">
+        <p className="mb-8 text-muted-foreground">
           Finance AI is a financial management platform that uses it to monitor
           your movements, and offer personalized insights, facilitating control
           of your budget.
