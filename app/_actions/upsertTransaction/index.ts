@@ -28,11 +28,11 @@ export async function upsertTransaction(params: UpsertTransactionParams) {
   if (!userId) throw new Error("Unauthorized");
 
   await db.transaction.upsert({
-    where: {
-      id: params.id,
-    },
     update: { ...params, userId },
     create: { ...params, userId },
+    where: {
+      id: params.id ?? "",
+    },
   });
 
   revalidatePath("/transactions"); // revalide a pagina apos add
