@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
+import { NavBar } from "./_components/navbar";
 
 const poppins = Poppins({ subsets: ["latin-ext"], weight: "400" });
 
@@ -20,7 +21,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${poppins.className} dark antialiased`}>
         <ClerkProvider appearance={{ baseTheme: dark }}>
-          {children}
+          <main className="flex h-screen w-screen flex-row overflow-x-hidden">
+            <NavBar />
+            <div className="h-full w-full">{children}</div>
+          </main>
         </ClerkProvider>
       </body>
     </html>
