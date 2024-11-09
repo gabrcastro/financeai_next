@@ -7,6 +7,7 @@ import { TransactionPieChart } from "./_components/pieChart";
 import { getDashboard } from "../_data/getDashboard";
 import { ExpensesPerCategory } from "./_components/expensesPerCategory";
 import { LastTransactions } from "./_components/lastTransactions";
+import { TitlePage } from "../_components/titlePage";
 
 interface IHomePage {
   searchParams: { month: string };
@@ -22,10 +23,9 @@ export default async function HomePage({ searchParams: { month } }: IHomePage) {
 
   return (
     <div className="flex h-full w-full flex-col space-y-2 overflow-hidden p-6">
-      <div className="flex w-full items-center justify-between">
-        <h1 className="text-xl font-bold">Dashboard</h1>
+      <TitlePage title="Dashboard">
         <MonthSelect />
-      </div>
+      </TitlePage>
       <div className="grid grid-cols-[2fr,1fr] gap-2 overflow-hidden">
         <div className="flex max-h-full flex-col gap-2 overflow-hidden">
           <SummaryCards month={month} {...dashboardData} />

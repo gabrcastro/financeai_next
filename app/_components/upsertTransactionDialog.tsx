@@ -103,7 +103,7 @@ export function UpsertTransactionDialog({
       }}
     >
       <DialogTrigger asChild></DialogTrigger>
-      <DialogContent>
+      <DialogContent className="h-[90%] max-h-[90%] overflow-y-auto">
         <DialogHeader>{isUpdate ? "Update" : "Add"} Transaction</DialogHeader>
         <DialogDescription>Enter the information below</DialogDescription>
 

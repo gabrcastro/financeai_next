@@ -21,6 +21,7 @@ body {
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
     --primary: 102 59% 44%; /* Adjusted for #55B02E */
+    /*--primary: 210 50% 20%;*/
     --primary-foreground: 355.7 100% 97.3%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -33,6 +34,7 @@ body {
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
     --ring: 102 59% 44%; /* Adjusted for #55B02E */
+    /*--ring: 210 50% 20%;*/
     --radius: 0.5rem;
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -49,6 +51,7 @@ body {
     --popover: 0 0% 9%;
     --popover-foreground: 0 0% 95%;
     --primary: 102 59% 44%; /* Adjusted for #55B02E */
+    /*--primary: 210 50% 20%;*/
     --primary-foreground: 0 0 100% --secondary: 240 3.7% 15.9%;
     --secondary-foreground: 0 0 100%;
     --muted: 0 0% 15%;
@@ -60,6 +63,7 @@ body {
     --border: 240 3.7% 15.9%;
     --input: 240 3.7% 15.9%;
     --ring: 102 59% 44%; /* Adjusted for #55B02E */
+    /*--ring: 210 50% 20%;*/
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
     --chart-3: 30 80% 55%;

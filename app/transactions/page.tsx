@@ -4,6 +4,7 @@ import { transactionColumns } from "./_columns";
 import { AddTransactionButton } from "../_components/addTransactionButton";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
+import { TitlePage } from "../_components/titlePage";
 
 export default async function TransactionsPage() {
   const { userId } = await auth();
@@ -17,10 +18,9 @@ export default async function TransactionsPage() {
 
   return (
     <div className="h-screen space-y-6 overflow-hidden p-6">
-      <div className="flex w-full items-center justify-between">
-        <h1 className="text-2xl font-bold">Transactions</h1>
+      <TitlePage title="Transactions">
         <AddTransactionButton />
-      </div>
+      </TitlePage>
       <DataTable columns={transactionColumns} data={transactions} />
     </div>
   );
