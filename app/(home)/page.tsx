@@ -6,6 +6,7 @@ import { isMatch } from "date-fns";
 import { TransactionPieChart } from "./_components/pieChart";
 import { getDashboard } from "../_data/getDashboard";
 import { ExpensesPerCategory } from "./_components/expensesPerCategory";
+import { LastTransactions } from "./_components/lastTransactions";
 
 interface IHomePage {
   searchParams: { month: string };
@@ -25,7 +26,7 @@ export default async function HomePage({ searchParams: { month } }: IHomePage) {
         <h1 className="text-2xl font-bold">Dashboard</h1>
         <MonthSelect />
       </div>
-      <div className="grid grid-cols-[2fr,1fr]">
+      <div className="grid grid-cols-[2fr,1fr] gap-6">
         <div className="flex flex-col gap-6">
           <SummaryCards month={month} {...dashboardData} />
 
@@ -36,6 +37,7 @@ export default async function HomePage({ searchParams: { month } }: IHomePage) {
             />
           </div>
         </div>
+        <LastTransactions lastTransactions={dashboardData.lastTransactions} />
       </div>
     </div>
   );

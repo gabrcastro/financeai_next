@@ -56,7 +56,7 @@ export function TransactionPieChart({
     },
   ];
   return (
-    <Card className="flex flex-col py-12">
+    <Card className="flex max-h-fit flex-col py-12">
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}

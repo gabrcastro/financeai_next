@@ -25,6 +25,15 @@ export const TRANSACTION_PAYMENT_METHOD_LABELS = {
   PIX: "Pix",
   OTHER: "Other",
 };
+export const TRANSACTION_PAYMENT_METHOD_LABELS_ICON = {
+  [TransactionPaymentMethod.CREDIT_CARD]: "/paymentMethods/credit-card.svg",
+  [TransactionPaymentMethod.DEBIT_CARD]: "/paymentMethods/debit-card.svg",
+  [TransactionPaymentMethod.BANK_SLIP]: "/paymentMethods/bank-slip.svg",
+  [TransactionPaymentMethod.BANK_TRANSFER]: "/paymentMethods/bank-transfer.svg",
+  [TransactionPaymentMethod.CASH]: "/paymentMethods/money.svg",
+  [TransactionPaymentMethod.PIX]: "/paymentMethods/pix.svg",
+  [TransactionPaymentMethod.OTHER]: "/paymentMethods/other.svg",
+};
 export const TRANSACTION_TYPE_LABELS = {
   DEPOSIT: "Deposit",
   EXPENSE: "Expense",
