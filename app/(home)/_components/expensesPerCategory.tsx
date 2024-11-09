@@ -11,7 +11,7 @@ export function ExpensesPerCategory({
   expensesPerCategory,
 }: IExpensesPerCategory) {
   return (
-    <ScrollArea className="col-span-2 max-h-fit rounded-md border pb-6">
+    <ScrollArea className="col-span-2 rounded-md border pb-6">
       <CardHeader>
         <CardTitle>Expenses by Category</CardTitle>
       </CardHeader>

@@ -25,9 +25,9 @@ export default async function RootLayout({
       <body className={`${poppins.className} dark antialiased`}>
         <ClerkProvider appearance={{ baseTheme: dark }}>
           {!userId ? (
-            <div className="h-screen w-screen">{children}</div>
+            <div className="h-screen w-screen overflow-hidden">{children}</div>
           ) : (
-            <main className="flex h-screen w-screen flex-row overflow-y-auto">
+            <main className="flex h-screen w-screen flex-row overflow-y-hidden">
               <NavBar />
               <div className="mb-36 ml-16 h-full w-full">{children}</div>
             </main>
