@@ -20,10 +20,10 @@ export function PieItemPercentage({
         >
           {icon}
         </span>
-        <p className={`text-muted-foreground opacity-70`}>{title}</p>
+        <p className={`text-xs text-muted-foreground opacity-70`}>{title}</p>
       </div>
 
-      <span className="text-muted-foreground">{percentage}%</span>
+      <span className="text-xs text-muted-foreground">{percentage}%</span>
     </div>
   );
 }

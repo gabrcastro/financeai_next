@@ -19,13 +19,13 @@ export function SummaryCard({ icon, title, amount, size, type }: ISymmaryCard) {
           {icon}
         </span>
         <p
-          className={`${size == "large" ? "text-white" : "text-muted-foreground"} opacity-70`}
+          className={`${size == "large" ? "text-white" : "text-muted-foreground"} text-xs opacity-70`}
         >
           {title}
         </p>
       </CardHeader>
       <CardContent className="flex justify-between">
-        <p className={`${size == "large" ? "text-4xl" : "text-2xl"} font-bold`}>
+        <p className={`${size == "large" ? "text-2xl" : "text-lg"} font-bold`}>
           {Intl.NumberFormat("en-US", {
             style: "currency",
             currency: "USD",

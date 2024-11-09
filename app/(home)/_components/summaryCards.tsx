@@ -21,7 +21,7 @@ export async function SummaryCards({
   investmentsTotal,
 }: ISymmaryCards) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-2">
       <SummaryCard
         icon={<WalletIcon size={16} />}
         title="Balance"
@@ -30,7 +30,7 @@ export async function SummaryCards({
       />
 
       {/* Others */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-3 gap-2">
         <SummaryCard
           icon={<PiggyBankIcon size={16} className="text-purple-500" />}
           title="Invested"

@@ -4,7 +4,6 @@ import { transactionColumns } from "./_columns";
 import { AddTransactionButton } from "../_components/addTransactionButton";
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
-import { ScrollArea } from "../_components/ui/scroll-area";
 
 export default async function TransactionsPage() {
   const { userId } = await auth();
@@ -22,9 +21,7 @@ export default async function TransactionsPage() {
         <h1 className="text-2xl font-bold">Transactions</h1>
         <AddTransactionButton />
       </div>
-      <ScrollArea className="overflow-y-auto">
-        <DataTable columns={transactionColumns} data={transactions} />
-      </ScrollArea>
+      <DataTable columns={transactionColumns} data={transactions} />
     </div>
   );
 }

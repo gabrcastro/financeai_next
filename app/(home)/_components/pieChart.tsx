@@ -56,11 +56,11 @@ export function TransactionPieChart({
     },
   ];
   return (
-    <Card className="flex flex-col pb-5">
+    <Card className="flex max-h-full flex-col pb-5">
       <CardContent className="flex-1 pb-0">
         <ChartContainer
           config={chartConfig}
-          className="mx-auto aspect-square max-h-[250px]"
+          className="mx-auto aspect-square max-h-[160px]"
         >
           <PieChart>
             <ChartTooltip
@@ -71,26 +71,26 @@ export function TransactionPieChart({
               data={chartData}
               dataKey="amount"
               nameKey="type"
-              innerRadius={60}
+              innerRadius={50}
             />
           </PieChart>
         </ChartContainer>
 
         <div className="space-y-2">
           <PieItemPercentage
-            icon={<PiggyBankIcon size={16} className="text-purple-500" />}
+            icon={<PiggyBankIcon size={14} className="text-purple-500" />}
             title="Investments"
             type="investment"
             percentage={typesPercentage.INVESTMENT}
           />
           <PieItemPercentage
-            icon={<TrendingUpIcon size={16} className="text-primary" />}
+            icon={<TrendingUpIcon size={14} className="text-primary" />}
             title="Deposits"
             type="debit"
             percentage={typesPercentage.DEPOSIT}
           />
           <PieItemPercentage
-            icon={<TrendingDownIcon size={16} className="text-red-500" />}
+            icon={<TrendingDownIcon size={14} className="text-red-500" />}
             title="Expenses"
             type="expense"
             percentage={typesPercentage.EXPENSE}

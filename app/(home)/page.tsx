@@ -21,16 +21,16 @@ export default async function HomePage({ searchParams: { month } }: IHomePage) {
   const dashboardData = await getDashboard(month);
 
   return (
-    <div className="flex h-full w-full flex-col space-y-6 overflow-hidden p-6">
+    <div className="flex h-full w-full flex-col space-y-2 overflow-hidden p-6">
       <div className="flex w-full items-center justify-between">
-        <h1 className="text-2xl font-bold">Dashboard</h1>
+        <h1 className="text-xl font-bold">Dashboard</h1>
         <MonthSelect />
       </div>
-      <div className="grid grid-cols-[2fr,1fr] gap-6 overflow-hidden">
-        <div className="flex flex-col gap-6 overflow-hidden">
+      <div className="grid grid-cols-[2fr,1fr] gap-2 overflow-hidden">
+        <div className="flex max-h-full flex-col gap-2 overflow-hidden">
           <SummaryCards month={month} {...dashboardData} />
 
-          <div className="grid grid-cols-3 grid-rows-1 gap-6">
+          <div className="grid max-h-full grid-cols-3 grid-rows-1 gap-2 overflow-hidden">
             <TransactionPieChart {...dashboardData} />
             <ExpensesPerCategory
               expensesPerCategory={dashboardData.totalExpensesPerCategory}

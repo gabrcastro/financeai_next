@@ -12,7 +12,7 @@ export function LastTransactions({ lastTransactions }: ILastTransactionsProps) {
   return (
     <ScrollArea className="rounded-md border">
       <CardHeader className="flex-row items-center justify-between">
-        <CardTitle className="font-bold">Last Transactions</CardTitle>
+        <CardTitle className="text-xl">Last Transactions</CardTitle>
         <Button variant={"outline"} className="rounded-full" asChild>
           <Link href={"/transactions"}>See more</Link>
         </Button>

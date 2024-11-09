@@ -11,9 +11,9 @@ export function ExpensesPerCategory({
   expensesPerCategory,
 }: IExpensesPerCategory) {
   return (
-    <ScrollArea className="col-span-2 rounded-md border pb-6">
+    <ScrollArea className="col-span-2 max-h-full rounded-md border">
       <CardHeader>
-        <CardTitle>Expenses by Category</CardTitle>
+        <CardTitle className="text-xl">Expenses by Category</CardTitle>
       </CardHeader>
       <CardContent className="space-y-6">
         {expensesPerCategory.map((category) => (
