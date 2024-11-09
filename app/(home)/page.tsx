@@ -5,6 +5,7 @@ import { MonthSelect } from "./_components/monthSelect";
 import { isMatch } from "date-fns";
 import { TransactionPieChart } from "./_components/pieChart";
 import { getDashboard } from "../_data/getDashboard";
+import { ExpensesPerCategory } from "./_components/expensesPerCategory";
 
 interface IHomePage {
   searchParams: { month: string };
@@ -30,6 +31,9 @@ export default async function HomePage({ searchParams: { month } }: IHomePage) {
 
           <div className="grid grid-cols-3 grid-rows-1 gap-6">
             <TransactionPieChart {...dashboardData} />
+            <ExpensesPerCategory
+              expensesPerCategory={dashboardData.totalExpensesPerCategory}
+            />
           </div>
         </div>
       </div>
