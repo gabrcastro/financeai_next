@@ -27,9 +27,9 @@ export default async function RootLayout({
           {!userId ? (
             <div className="h-screen w-screen">{children}</div>
           ) : (
-            <main className="flex h-screen w-screen flex-row overflow-x-hidden">
+            <main className="flex h-screen w-screen flex-row overflow-y-auto">
               <NavBar />
-              <div className="h-full w-full">{children}</div>
+              <div className="mb-36 ml-16 h-full w-full">{children}</div>
             </main>
           )}
         </ClerkProvider>

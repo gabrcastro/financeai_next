@@ -54,7 +54,7 @@ export const transactionColumns: ColumnDef<Transaction>[] = [
     cell: ({ row: { original: transaction } }) =>
       new Intl.NumberFormat("en-US", {
         style: "currency",
-        currency: "BRL",
+        currency: "USD",
       }).format(Number(transaction.amount)),
   },
   {

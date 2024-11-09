@@ -14,7 +14,7 @@ export function NavBar() {
   const pathname = usePathname();
 
   return (
-    <nav className="flex flex-col items-center justify-between border-r-[1px] border-r-zinc-800 p-5">
+    <nav className="fixed flex h-screen min-h-screen flex-col items-center justify-between border-r-[1px] border-r-zinc-800 p-5">
       <div className="flex flex-col gap-6">
         <Image
           src={"/icon.svg"}

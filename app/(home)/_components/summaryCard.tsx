@@ -7,12 +7,17 @@ interface ISymmaryCard {
   title: string;
   amount: number;
   size?: "small" | "large";
+  type?: "default" | "expense" | "debit" | "investment";
 }
-export function SummaryCard({ icon, title, amount, size }: ISymmaryCard) {
+export function SummaryCard({ icon, title, amount, size, type }: ISymmaryCard) {
   return (
     <Card>
-      <CardHeader className="flex-row items-center gap-2">
-        {icon}
+      <CardHeader className="flex flex-row items-center gap-2">
+        <span
+          className={`${type === "expense" ? "bg-red-500/10" : type === "debit" ? "bg-primary/10" : type === "investment" ? "bg-purple-500/10" : "bg-muted/50"} rounded-full p-2`}
+        >
+          {icon}
+        </span>
         <p
           className={`${size == "large" ? "text-white" : "text-muted-foreground"} opacity-70`}
         >

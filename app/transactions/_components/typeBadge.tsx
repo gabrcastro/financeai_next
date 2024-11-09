@@ -20,7 +20,7 @@ export function TransactionTypeBadge({
 
   if (transaction.type == TransactionType.EXPENSE) {
     return (
-      <Badge className="bg-danger bg-opacity-10 font-light capitalize text-danger hover:bg-danger hover:bg-opacity-10">
+      <Badge className="bg-danger/10 font-light capitalize text-danger hover:bg-danger/10">
         <CircleIcon className="mr-2 fill-danger" size={10} />
         Expense
       </Badge>
@@ -28,8 +28,8 @@ export function TransactionTypeBadge({
   }
 
   return (
-    <Badge className="bg-white bg-opacity-10 font-light capitalize text-white hover:bg-white hover:bg-opacity-10">
-      <CircleIcon className="mr-2 fill-white" size={10} />
+    <Badge className="bg-purple-500/10 font-light capitalize text-purple-500 hover:bg-purple-500/10">
+      <CircleIcon className="mr-2 fill-purple-500" size={10} />
       Investment
     </Badge>
   );
