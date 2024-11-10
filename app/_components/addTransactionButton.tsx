@@ -17,7 +17,6 @@ export function AddTransactionButton({
   const { user } = useUser();
   const hasPremiumPlan = user?.publicMetadata.subscriptionPlan === "premium";
   const transactionsLimited = transactionsNumber === 10 && !hasPremiumPlan;
-
   return (
     <>
       <Button
@@ -34,7 +33,7 @@ export function AddTransactionButton({
         )}
       </Button>
       <UpsertTransactionDialog
-        transactionsNumber={transactionsNumber ?? 0}
+        transactionsNumber={!hasPremiumPlan ? (transactionsNumber ?? 0) : null}
         isOpen={dialogIsOpen}
         setIsOpen={setDialogIsOpen}
       />
