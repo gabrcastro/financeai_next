@@ -6,6 +6,7 @@ import {
   DialogDescription,
   DialogFooter,
   DialogHeader,
+  DialogTitle,
   DialogTrigger,
 } from "./ui/dialog";
 import {
@@ -46,6 +47,7 @@ interface UpsertProps {
   setIsOpen: (isOpen: boolean) => void;
   defaultValues?: FormSchema;
   transactionId?: string;
+  transactionsNumber?: number;
 }
 
 type FormSchema = z.infer<typeof formSchema>;
@@ -69,6 +71,7 @@ export function UpsertTransactionDialog({
   setIsOpen,
   defaultValues,
   transactionId,
+  transactionsNumber,
 }: UpsertProps) {
   const form = useForm<FormSchema>({
     resolver: zodResolver(formSchema),
@@ -94,6 +97,8 @@ export function UpsertTransactionDialog({
 
   const isUpdate = Boolean(transactionId);
 
+  console.log("transaction upsert" + transactionsNumber);
+
   return (
     <Dialog
       open={isOpen}
@@ -104,9 +109,15 @@ export function UpsertTransactionDialog({
     >
       <DialogTrigger asChild></DialogTrigger>
       <DialogContent className="h-[90%] max-h-[90%] overflow-y-auto">
-        <DialogHeader>{isUpdate ? "Update" : "Add"} Transaction</DialogHeader>
+        <DialogHeader>
+          <DialogTitle>{isUpdate ? "Update" : "Add"} Transaction</DialogTitle>
+        </DialogHeader>
         <DialogDescription>Enter the information below</DialogDescription>
-
+        {transactionsNumber != null && (
+          <span className="w-full text-center text-danger">
+            You already have {transactionsNumber} of 10
+          </span>
+        )}
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
             <FormField

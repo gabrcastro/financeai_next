@@ -1,5 +1,8 @@
 import { AddTransactionButton } from "@/app/_components/addTransactionButton";
 import { Card, CardContent, CardHeader } from "@/app/_components/ui/card";
+import { db } from "@/app/_lib/prisma";
+import { auth } from "@clerk/nextjs/server";
+import { endOfMonth, startOfMonth } from "date-fns";
 import { ReactNode } from "react";
 
 interface ISymmaryCard {
@@ -9,7 +12,24 @@ interface ISymmaryCard {
   size?: "small" | "large";
   type?: "default" | "expense" | "debit" | "investment";
 }
-export function SummaryCard({ icon, title, amount, size, type }: ISymmaryCard) {
+export async function SummaryCard({
+  icon,
+  title,
+  amount,
+  size,
+  type,
+}: ISymmaryCard) {
+  const { userId } = await auth();
+  if (!userId) throw new Error("User not logged in");
+  const currentMonthTransactions = await db.transaction.count({
+    where: {
+      userId,
+      createdAt: {
+        gte: startOfMonth(new Date()),
+        lt: endOfMonth(new Date()),
+      },
+    },
+  });
   return (
     <Card>
       <CardHeader className="flex flex-row items-center gap-2">
@@ -31,7 +51,9 @@ export function SummaryCard({ icon, title, amount, size, type }: ISymmaryCard) {
             currency: "USD",
           }).format(amount)}
         </p>
-        {size === "large" && <AddTransactionButton />}
+        {size === "large" && (
+          <AddTransactionButton transactionsNumber={currentMonthTransactions} />
+        )}
       </CardContent>
     </Card>
   );
