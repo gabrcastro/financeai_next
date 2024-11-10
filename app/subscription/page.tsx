@@ -6,6 +6,7 @@ import { CardPlan } from "./_components/cardPlan";
 export default async function SubscriptionPage() {
   const { userId } = await auth();
   if (!userId) redirect("/login");
+
   return (
     <div className="space-y-5 p-6">
       <TitlePage title="Subscription" />
