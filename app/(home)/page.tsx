@@ -8,6 +8,7 @@ import { getDashboard } from "../_data/getDashboard";
 import { ExpensesPerCategory } from "./_components/expensesPerCategory";
 import { LastTransactions } from "./_components/lastTransactions";
 import { TitlePage } from "../_components/titlePage";
+import { ReportButton } from "./_components/reportButton";
 
 interface IHomePage {
   searchParams: { month: string };
@@ -24,7 +25,10 @@ export default async function HomePage({ searchParams: { month } }: IHomePage) {
   return (
     <div className="flex h-full w-full flex-col space-y-2 overflow-hidden p-6">
       <TitlePage title="Dashboard">
-        <MonthSelect />
+        <div className="flex flex-row items-center gap-5">
+          <ReportButton month={month} />
+          <MonthSelect />
+        </div>
       </TitlePage>
       <div className="grid grid-cols-[2fr,1fr] gap-2 overflow-hidden">
         <div className="flex max-h-full flex-col gap-2 overflow-hidden">

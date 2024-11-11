@@ -47,7 +47,7 @@ interface UpsertProps {
   setIsOpen: (isOpen: boolean) => void;
   defaultValues?: FormSchema;
   transactionId?: string;
-  transactionsNumber?: number;
+  transactionsNumber?: number | null;
 }
 
 type FormSchema = z.infer<typeof formSchema>;
