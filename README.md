@@ -49,10 +49,23 @@ npm install
 Crie um arquivo .env na raiz do projeto com as seguintes variáveis e claro, os valores correspondentes:
 
 ```
-DATABASE_URL=<database-url>
-NEXT_PUBLIC_CLERK_FRONTEND_API=<sua-chave-clerk>
-CLERK_API_KEY=<sua-chave-clerk-backend>
-OPENAI_API_KEY=<sua-chave-openai>
+DATABASE_URL=<url>
+POSTGRES_USER=<user>
+POSTGRES_PASSWORD=<passwd>
+
+# CLERK
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=<key>
+CLERK_SECRET_KEY=<key>
+
+# STRIPE
+STRIPE_FINANCEAI_PREMIUM_PRICE_ID=<id>
+STRIPE_SECRET_KEY=<key>
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=<key>
+STRIPE_WEBHOOK_SECRET_KEY=<key>
+NEXT_PUBLIC_STRIPE_CUSTOMER_PORTAL_LINK=<link>
+
+# GPT
+OPENAI_API_KEY=<key>
 ```
 
 ### 4. Configure o Prisma
