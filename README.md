@@ -36,7 +36,7 @@ Siga os passos abaixo para executar o projeto localmente:
 ### 1. Clone o repositório
 ```
 git clone https://github.com/gabrcastro/financeai_next.git
-cd finance-ai
+cd financeai_next
 ```
 ### 2. Instale as dependências
 Certifique-se de ter o Node.js e o npm instalados na sua máquina.
