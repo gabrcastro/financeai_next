@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Finance AI
 
-## Getting Started
+Finance AI é uma aplicação desenvolvida em Next.js que utiliza inteligência artificial para ajudar os usuários a gerenciar suas finanças de forma mais inteligente e eficiente. A aplicação integra diversas tecnologias modernas para garantir performance, escalabilidade e uma experiência rica para o usuário.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 🚀 Funcionalidades
+
+- Gerenciamento inteligente de finanças pessoais
+- Integração com o ChatGPT para insights e recomendações financeiras
+- Autenticação de usuários utilizando [Clerk](https://clerk.dev/)
+- Persistência de dados com PostgreSQL e ORM Prisma
+- Contêinerização com Docker para ambiente padronizado
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+Este projeto foi desenvolvido com as seguintes tecnologias e ferramentas:
+
+- **[Next.js](https://nextjs.org/):** Framework React para aplicações web
+- **[Clerk](https://clerk.dev/):** Gerenciamento de autenticação e usuários
+- **[Prisma](https://www.prisma.io/):** ORM para manipulação de banco de dados
+- **[PostgreSQL](https://www.postgresql.org/):** Banco de dados relacional
+- **[Docker](https://www.docker.com/):** Contêinerização para ambientes isolados
+- **[OpenAI API](https://platform.openai.com/):** Integração com o ChatGPT
+- **[Tailwind CSS](https://tailwindcss.com/):** Framework para estilização
+- **npm:** Gerenciador de pacotes utilizado para executar comandos
+
+---
+
+## 🖥️ Como Rodar o Projeto
+
+Siga os passos abaixo para executar o projeto localmente:
+
+### 1. Clone o repositório
+```
+git clone https://github.com/seu-usuario/finance-ai.git
+cd finance-ai
+```
+### 2. Instale as dependências
+Certifique-se de ter o Node.js e o npm instalados na sua máquina.
+
+```
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. Configure as variáveis de ambiente
+Crie um arquivo .env na raiz do projeto com as seguintes variáveis e claro, os valores correspondentes:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+DATABASE_URL=<database-url>
+NEXT_PUBLIC_CLERK_FRONTEND_API=<sua-chave-clerk>
+CLERK_API_KEY=<sua-chave-clerk-backend>
+OPENAI_API_KEY=<sua-chave-openai>
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Configure o Prisma
+Gere os arquivos do cliente do Prisma e sincronize o esquema do banco de dados:
 
-## Learn More
+```
+npx prisma generate
+npx prisma db push
+```
+### 5. Execute a aplicação
+Inicie o servidor de desenvolvimento:
 
-To learn more about Next.js, take a look at the following resources:
+```
+npm run dev
+```
+Acesse a aplicação em http://localhost:3000.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🐳 Docker (Opcional)
+No projeto existe um arquivo chamado compose.yaml, lá é preciso configurar o necessário para rodar o docker.
+Após configurar corretamente, pode rodar o comando para iniciar o docker.
+Claro, precisa que o docker esteja rodando na sua máquina.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```
+docker compose up
+```
 
-## Deploy on Vercel
+## 📄 Licença
+Este projeto está licenciado sob a MIT License.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📫 Contato
+Se tiver dúvidas ou sugestões, entre em contato:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+LinkedIn: https://linkedin.com/in/gabrielsouzacastro
