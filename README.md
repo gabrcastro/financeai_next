@@ -79,9 +79,6 @@ Claro, precisa que o docker esteja rodando na sua máquina.
 docker compose up
 ```
 
-## 📄 Licença
-Este projeto está licenciado sob a MIT License.
-
 ## 📫 Contato
 Se tiver dúvidas ou sugestões, entre em contato:
 
