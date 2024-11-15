@@ -35,7 +35,7 @@ Siga os passos abaixo para executar o projeto localmente:
 
 ### 1. Clone o repositório
 ```
-git clone https://github.com/seu-usuario/finance-ai.git
+git clone https://github.com/gabrcastro/financeai_next.git
 cd finance-ai
 ```
 ### 2. Instale as dependências
